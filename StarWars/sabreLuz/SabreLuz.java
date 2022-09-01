@@ -35,7 +35,6 @@ public class SabreLuz {
 
    @Override
    public String toString() {
-      return "\nCor do sabre: " + this.cor +
-             "\nSituação do sabre: " + this.isAberto();
+      return "\nCor do sabre: " + this.cor;
    }
 }

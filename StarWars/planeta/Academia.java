@@ -62,7 +62,6 @@ public class Academia {
       return "\nPlaneta da Academia: " + getPlaneta().getNome() +
             "\nEndereço do Academia: " + getEndereco() +
             "\nTamanho do Academia: " + getTam() +
-            "\nLotação Máxima da Academia: " + getLotacaoMax() +
-            "\nAlunos da Academia: ";
+            "\nLotação Máxima da Academia: " + getLotacaoMax();
    }
 }
