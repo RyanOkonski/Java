@@ -91,15 +91,18 @@ public class Cadastro {
          System.out.print("\nInsira a quantidade máx de Jedis na Academia[" + (i + 1) + "]: ");
          int tamMax = sc.nextInt();
 
-         for (int m = 0; m < tamMax; m++){
-            System.out.print("\nJedi[" + (m + 1) + "]: " + jedi[m]);
-         }
-         System.out.println("\nEscolha um Jedi para a academia: ");
-         int escJedi = sc.nextInt();
-         Jedi[] jedis = {jedi[escJedi - 1]};
-         
-         academia[i] = new Academia(end, ta2, tamMax, planeta[escPla - 1], jedis);
+         Jedi[] jediAca = new Jedi[tamMax];
 
+         for (int m = 0; m < tamMax; m++){
+            System.out.print("\nJedi[" + (m + 1) + "]: " + jedi[m].getNome());
+         }
+
+         for (int z = 0; z < jediAca.length; z++){
+            System.out.println("\nEscolha um Jedi para a academia: ");
+            int escJedi = sc.nextInt();
+            jediAca[z] = jedi[escJedi - 1];
+         }
+         academia[i] = new Academia(end, ta2, tamMax, planeta[escPla - 1], jediAca);
          sc.nextLine();
       }
       sc.close();
