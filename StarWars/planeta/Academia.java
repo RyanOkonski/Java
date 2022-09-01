@@ -64,7 +64,7 @@ public class Academia {
          dados += newJedi.toString();
       }
 
-      return   "\n--------Academia--------\n" + 
+      return   "\n--------Academia--------" + 
             "\nPlaneta da Academia: " + getPlaneta().getNome() +
             "\nEndereço do Academia: " + getEndereco() +
             "\nTamanho do Academia: " + getTam() +
