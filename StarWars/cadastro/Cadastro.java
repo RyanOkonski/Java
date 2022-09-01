@@ -83,7 +83,7 @@ public class Cadastro {
          int ta2 = sc.nextInt();
          
          for (int s = 0; s < planeta.length; s++){
-            System.out.print("\nPlaneta[" + (s + 1) + "]: " + planeta[s]);
+            System.out.print("\nPlaneta[" + (s + 1) + "]: " + planeta[s].getNome());
          }
          System.out.println("\nEscolha um Planeta para a academia: ");
          int escPla = sc.nextInt();
