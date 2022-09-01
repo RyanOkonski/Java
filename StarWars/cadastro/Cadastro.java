@@ -93,7 +93,7 @@ public class Cadastro {
 
          Jedi[] jediAca = new Jedi[tamMax];
 
-         for (int m = 0; m < tamMax; m++){
+         for (int m = 0; m < jedi.length; m++){
             System.out.print("\nJedi[" + (m + 1) + "]: " + jedi[m].getNome());
          }
 
