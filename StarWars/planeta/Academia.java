@@ -4,6 +4,7 @@ import jedi.Jedi;
 
 public class Academia {
    private String endereco;
+   private String dados;
    private int tam;
    private int lotacaoMax;
    private Planeta planeta;
@@ -59,9 +60,14 @@ public class Academia {
 
    @Override
    public String toString() {
+      for (Jedi newJedi : this.jedi){
+         dados += newJedi.toString();
+      }
+
       return "\nPlaneta da Academia: " + getPlaneta().getNome() +
             "\nEndereço do Academia: " + getEndereco() +
             "\nTamanho do Academia: " + getTam() +
-            "\nLotação Máxima da Academia: " + getLotacaoMax();
+            "\nLotação Máxima da Academia: " + getLotacaoMax() +
+            "\nJedis cadastrados: " + dados;
    }
 }

@@ -58,13 +58,13 @@ public class Cadastro {
          String lado = sc.nextLine();
 
          for (int s = 0; s < coresSabre.length; s++){
-            System.out.print("\nSabre [" + (s + 1) + "]: " + coresSabre[s]);
+            System.out.print("Sabre[" + (s + 1) + "]: " + coresSabre[s] + "\n");
          }
-         System.out.print("\nEscolha um Sabre de Luz: ");
+         System.out.print("Escolha um Sabre de Luz: ");
          int sabreCor = sc.nextInt();
 
          for (int f = 0; f < forcas.length; f++) {
-            System.out.print("Insira a intensidade da Habilidade[" + (f + 1) + "]: ");
+            System.out.print("Insira a intensidade de[" + nomesForca[f] + "]: ");
             int potencia = sc.nextInt();
             forcas[f] = new Forca(nomesForca[f], potencia);
          }
@@ -75,27 +75,33 @@ public class Cadastro {
          sc.nextLine();
       }
 
-      Jedi[] jedi_meio = { jedi[0], jedi[1], jedi[2], jedi[3] };
-
       for (int i = 0; i < academia.length; i++) {
          System.out.println("\n------ Cadastro Academia's ------");
          System.out.print("Insira o endereço da Academia[" + (i + 1) + "]: ");
          String end = sc.nextLine();
          System.out.print("Insira o tamanho da Academia[" + (i + 1) + "]: ");
          int ta2 = sc.nextInt();
-         System.out.print("Insira a quantidade máx de alunos da Academia[" + (i + 1) + "]: ");
+         
+         for (int s = 0; s < planeta.length; s++){
+            System.out.print("\nPlaneta[" + (s + 1) + "]: " + planeta[s]);
+         }
+         System.out.println("\nEscolha um Planeta para a academia: ");
+         int escPla = sc.nextInt();
+         
+         System.out.print("\nInsira a quantidade máx de Jedis na Academia[" + (i + 1) + "]: ");
          int tamMax = sc.nextInt();
 
-         for (int s = 0; s < planeta.length; s++){
-            System.out.print("\nPlaneta [" + (s + 1) + "]: " + planeta[s]);
+         for (int m = 0; m < tamMax; m++){
+            System.out.print("\nJedi[" + (m + 1) + "]: " + jedi[m]);
          }
-         System.out.println("\nEscolha um Planeta: ");
-         int escPla = sc.nextInt();
+         System.out.println("\nEscolha um Jedi para a academia: ");
+         int escJedi = sc.nextInt();
+         Jedi[] jedis = {jedi[escJedi - 1]};
+         
+         academia[i] = new Academia(end, ta2, tamMax, planeta[escPla - 1], jedis);
 
-         academia[i] = new Academia(end, ta2, tamMax, planeta[escPla - 1], jedi_meio);
          sc.nextLine();
       }
-
       sc.close();
 
       System.out.println("\n\n------ DADOS JEDI'S ------");
@@ -107,7 +113,6 @@ public class Cadastro {
       System.out.println("\n\n------ DADOS ACADEMIA'S ------");
       for (Academia newAcad : academia) {
          System.out.println(newAcad.toString());
-         System.out.println(Arrays.toString(newAcad.getJedi()));
       }
       System.out.println("\n======== PROGRAMA FINALIZADO ========\n\n");
    }
