@@ -104,9 +104,9 @@ public class Cadastro {
       sc.close();
 
       System.out.println("\n\n------ DADOS JEDI'S ------");
-      for (Jedi newJedi : jedi) {
-         System.out.println(newJedi.toString());
-         System.out.println(Arrays.toString(newJedi.getForca()));
+      for (int i = 0; i < jedi.length; i++) {
+         System.out.println(jedi[i].toString());
+         System.out.println(Arrays.toString(jedi[i].getForca()));
       }
 
       System.out.println("\n\n------ DADOS ACADEMIA'S ------");
