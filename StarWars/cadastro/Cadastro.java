@@ -68,9 +68,7 @@ public class Cadastro {
             int potencia = sc.nextInt();
             forcas[f] = new Forca(nomesForca[f], potencia);
          }
-
-         Forca[] forcas2 = { forcas[0], forcas[1], forcas[2], forcas[3] };
-         jedi[i] = new Jedi(nome, lado, coresSabre[sabreCor - 1], forcas2);
+         jedi[i] = new Jedi(nome, lado, coresSabre[sabreCor - 1], forcas);
          jedi[i].apertarBotaoSabre();
          sc.nextLine();
       }
@@ -83,31 +81,32 @@ public class Cadastro {
          int ta2 = sc.nextInt();
          
          for (int s = 0; s < planeta.length; s++){
-            System.out.print("\nPlaneta[" + (s + 1) + "]: " + planeta[s]);
+            System.out.print("\nPlaneta[" + (s + 1) + "]: " + planeta[s].getNome());
          }
-         System.out.println("\nEscolha um Planeta para a academia: ");
+         System.out.print("\nEscolha um Planeta para a academia: ");
          int escPla = sc.nextInt();
          
          System.out.print("\nInsira a quantidade máx de Jedis na Academia[" + (i + 1) + "]: ");
          int tamMax = sc.nextInt();
 
-         for (int m = 0; m < tamMax; m++){
-            System.out.print("\nJedi[" + (m + 1) + "]: " + jedi[m]);
+         Jedi[] jediAca = new Jedi[tamMax];
+         for (int m = 0; m < jedi.length; m++){
+            System.out.print("\nJedi[" + (m + 1) + "]: " + jedi[m].getNome());
          }
-         System.out.println("\nEscolha um Jedi para a academia: ");
-         int escJedi = sc.nextInt();
-         Jedi[] jedis = {jedi[escJedi - 1]};
-         
-         academia[i] = new Academia(end, ta2, tamMax, planeta[escPla - 1], jedis);
-
+         for (int z = 0; z < jediAca.length; z++){
+            System.out.print("\nEscolha um Jedi para a academia: ");
+            int escJedi = sc.nextInt();
+            jediAca[z] = jedi[escJedi - 1];
+         }
+         academia[i] = new Academia(end, ta2, tamMax, planeta[escPla - 1], jediAca);
          sc.nextLine();
       }
       sc.close();
 
       System.out.println("\n\n------ DADOS JEDI'S ------");
-      for (Jedi newJedi : jedi) {
-         System.out.println(newJedi.toString());
-         System.out.println(Arrays.toString(newJedi.getForca()));
+      for (int i = 0; i < jedi.length; i++) {
+         System.out.println(jedi[i].toString());
+         System.out.println(Arrays.toString(jedi[i].getForca()));
       }
 
       System.out.println("\n\n------ DADOS ACADEMIA'S ------");

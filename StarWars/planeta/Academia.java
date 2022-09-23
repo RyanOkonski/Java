@@ -4,7 +4,7 @@ import jedi.Jedi;
 
 public class Academia {
    private String endereco;
-   private String dados;
+   private String dados = new String();
    private int tam;
    private int lotacaoMax;
    private Planeta planeta;
@@ -64,10 +64,11 @@ public class Academia {
          dados += newJedi.toString();
       }
 
-      return "\nPlaneta da Academia: " + getPlaneta().getNome() +
+      return   "\n--------Academia--------" + 
+            "\nPlaneta da Academia: " + getPlaneta().getNome() +
             "\nEndereço do Academia: " + getEndereco() +
             "\nTamanho do Academia: " + getTam() +
             "\nLotação Máxima da Academia: " + getLotacaoMax() +
-            "\nJedis cadastrados: " + dados;
+            "\n------Jedis cadastrados------" + dados;
    }
 }

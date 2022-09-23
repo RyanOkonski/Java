@@ -17,11 +17,11 @@ public class Forca {
       this.nome = nome;
    }
 
-   public Integer getPotencia() {
+   public int getPotencia() {
       return potencia;
    }
 
-   public void setPotencia(Integer potencia) {
+   public void setPotencia(int potencia) {
       this.potencia = potencia;
    }
 
