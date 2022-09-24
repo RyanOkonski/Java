@@ -2,7 +2,6 @@ import character.Jedi;
 import character.Pilot;
 import vehicles.Nave;
 import weapons.SabreLuz;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,6 +42,7 @@ public class Main{
       }
 
       for(int z = 0; z < pilotsNum; z++){
+         System.out.println("------PRINT PILOT [" + (z + 1) + "] DATA------");
          System.out.println(pilots.get(z).toString());
       }
 
@@ -61,9 +61,11 @@ public class Main{
          int powers = sc.nextInt();
          jedis.add(new Jedi(name, midiChlorian, powers, sabre));
          System.out.println();
+         sc.nextLine();
       }
 
       for(int z = 0; z < jedisNum; z++){
+         System.out.println("------PRINT JEDI [" + (z + 1) + "] DATA------");
          System.out.println(jedis.get(z).toString());
       }
 
