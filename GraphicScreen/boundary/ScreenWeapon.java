@@ -95,6 +95,7 @@ public class ScreenWeapon extends JFrame {
             } catch (Exception ae) {
                System.out.println("We couldn't save your Weapon!");
             }
+            this.dispose();
             break;
       }
    }

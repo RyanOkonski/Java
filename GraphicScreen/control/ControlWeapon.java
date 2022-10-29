@@ -19,8 +19,7 @@ public class ControlWeapon {
             this.weapon.getSize() + "," + 
             this.weapon.getManner();
 
-      String desktop = System.getProperty ("user.home") + "/Users/claudineisantos/Desktop/Ryan/GitHub/Java/Java/GraphicScreen";
-      File arquivo = new File(desktop + "weapon.csv");
+      File arquivo = new File("C:\\Users\\lucia\\Documents\\GitHub\\MyProfileGit\\Java\\GraphicScreen\\weapon.csv");
       if (!arquivo.exists()) {
          FileWriter fw = new FileWriter(arquivo, true);
          BufferedWriter bw = new BufferedWriter(fw);

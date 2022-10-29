@@ -92,6 +92,7 @@ public class ScreenSkill extends JFrame {
             } catch (Exception ae) {
                System.out.println("We couldn't save your Skill!");
             }
+            this.dispose();
             break;
       }
    }

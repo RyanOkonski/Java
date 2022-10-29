@@ -95,6 +95,7 @@ public class ScreenJedi extends JFrame {
             } catch (Exception ae) {
                System.out.println("We couldn't save your Jedi!");
             }
+            this.dispose();
             break;
       }
    }

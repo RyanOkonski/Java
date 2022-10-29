@@ -21,9 +21,7 @@ public class ControlJedi {
             this.jedi.getAge() + "," +
             this.jedi.getHight();
 
-      String desktop = System.getProperty("user.home")
-            + "/Users/claudineisantos/Desktop/Ryan/GitHub/Java/Java/GraphicScreen";
-      File arquivo = new File(desktop + "jedi.csv");
+      File arquivo = new File("C:\\Users\\lucia\\Documents\\GitHub\\MyProfileGit\\Java\\GraphicScreen\\jedi.csv");
       if (!arquivo.exists()) {
          FileWriter fw = new FileWriter(arquivo, true);
          BufferedWriter bw = new BufferedWriter(fw);
