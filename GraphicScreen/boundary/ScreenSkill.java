@@ -8,13 +8,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import control.ControlJedi;
+import control.ControlSkill;
 
-public class ScreenJedi extends JFrame {
-   private JTextField name = new JTextField(30);
-   private JTextField age = new JTextField(4);
-   private JTextField hight = new JTextField(3);
-   private ControlJedi control = new ControlJedi();
+public class ScreenSkill extends JFrame {
+   private JTextField skillName = new JTextField(30);
+   private JTextField skillValue = new JTextField(4);
+   private ControlSkill control = new ControlSkill();
    private String data;
 
    public String getData() {
@@ -25,8 +24,8 @@ public class ScreenJedi extends JFrame {
       this.data = data;
    }
 
-   public ScreenJedi() {
-      this.setTitle("Create Jedi");
+   public ScreenSkill() {
+      this.setTitle("Create Skill");
       this.getContentPane().setLayout(new BorderLayout());
       this.getContentPane().add(getInputs(), BorderLayout.CENTER);
       this.getContentPane().add(getButtons(), BorderLayout.PAGE_END);
@@ -37,13 +36,11 @@ public class ScreenJedi extends JFrame {
    }
 
    public JPanel getInputs() {
-      JPanel panelJedi = new JPanel(new GridLayout(4, 2));
-      panelJedi.add(new JLabel("Insert Jedi's name:"));
-      panelJedi.add(this.name);
-      panelJedi.add(new JLabel("Insert Jedi's age:"));
-      panelJedi.add(this.age);
-      panelJedi.add(new JLabel("Insert Jedi's hight:"));
-      panelJedi.add(this.hight);
+      JPanel panelJedi = new JPanel(new GridLayout(3, 2));
+      panelJedi.add(new JLabel("Insert Skill name:"));
+      panelJedi.add(this.skillName);
+      panelJedi.add(new JLabel("Insert Skill value:"));
+      panelJedi.add(this.skillValue);
 
       return panelJedi;
    }
@@ -86,22 +83,21 @@ public class ScreenJedi extends JFrame {
          case JOptionPane.NO_OPTION:
             break;
          case JOptionPane.OK_OPTION:
-            this.setData(this.name.getText() + "," + this.age.getText() + "," + this.hight.getText());
-            control.saveJedi(data);
+            this.setData(this.skillName.getText() + "," + this.skillValue.getText());
+            control.saveSkills(data);
             clearFields();
             try {
-               control.escreverArquivoJedi();
-               JOptionPane.showMessageDialog(this, "Your Jedi has been saved!");
+               control.escreverArquivoSkill();
+               JOptionPane.showMessageDialog(this, "Your Skill has been saved!");
             } catch (Exception ae) {
-               System.out.println("We couldn't save your Jedi!");
+               System.out.println("We couldn't save your Skill!");
             }
             break;
       }
    }
 
    public void clearFields() {
-      this.name.setText("");
-      this.age.setText("");
-      this.hight.setText("");
+      this.skillName.setText("");
+      this.skillValue.setText("");
    }
 }

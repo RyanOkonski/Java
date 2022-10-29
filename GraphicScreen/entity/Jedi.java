@@ -4,15 +4,12 @@ public class Jedi {
    private String name;
    private Integer age;
    private Float hight;
-   private Weapon sabreLuz;
-   private Skills skillJedi;
 
-   public Jedi(String name, Integer age, Float hight, Weapon sabreLuz, Skills skill) {
+
+   public Jedi(String name, Integer age, Float hight) {
       this.setName(name);
       this.setAge(age);
       this.setHight(hight);
-      this.setSabreLuz(sabreLuz);
-      this.setSkillJedi(skill);
    }
 
    public String getName() {
@@ -37,21 +34,5 @@ public class Jedi {
    
    public void setHight(Float hight) {
       this.hight = hight;
-   }
-
-   public Weapon getSabreLuz() {
-      return sabreLuz;
-   }
-
-   public void setSabreLuz(Weapon sabreLuz) {
-      this.sabreLuz = sabreLuz;
-   }
-
-   public Skills getSkillJedi() {
-      return skillJedi;
-   }
-
-   public void setSkillJedi(Skills skillJedi) {
-      this.skillJedi = skillJedi;
    }
 }

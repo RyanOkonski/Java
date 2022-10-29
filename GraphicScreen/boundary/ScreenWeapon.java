@@ -8,13 +8,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import control.ControlJedi;
+import control.ControlWeapon;
 
-public class ScreenJedi extends JFrame {
-   private JTextField name = new JTextField(30);
-   private JTextField age = new JTextField(4);
-   private JTextField hight = new JTextField(3);
-   private ControlJedi control = new ControlJedi();
+public class ScreenWeapon extends JFrame {
+   private JTextField weaponColor = new JTextField(10);
+   private JTextField weaponSize = new JTextField(4);
+   private JTextField weaponBool = new JTextField(5);
+   private ControlWeapon control = new ControlWeapon();
    private String data;
 
    public String getData() {
@@ -25,25 +25,25 @@ public class ScreenJedi extends JFrame {
       this.data = data;
    }
 
-   public ScreenJedi() {
-      this.setTitle("Create Jedi");
+   public ScreenWeapon() {
+      this.setTitle("Create Weapon");
       this.getContentPane().setLayout(new BorderLayout());
       this.getContentPane().add(getInputs(), BorderLayout.CENTER);
       this.getContentPane().add(getButtons(), BorderLayout.PAGE_END);
       this.pack();
-      this.setSize(350,200);
+      this.setSize(450,200);
       this.setLocationRelativeTo(null);
       this.setVisible(true);
    }
 
    public JPanel getInputs() {
       JPanel panelJedi = new JPanel(new GridLayout(4, 2));
-      panelJedi.add(new JLabel("Insert Jedi's name:"));
-      panelJedi.add(this.name);
-      panelJedi.add(new JLabel("Insert Jedi's age:"));
-      panelJedi.add(this.age);
-      panelJedi.add(new JLabel("Insert Jedi's hight:"));
-      panelJedi.add(this.hight);
+      panelJedi.add(new JLabel("Insert Weapon color:"));
+      panelJedi.add(this.weaponColor);
+      panelJedi.add(new JLabel("Insert Weapon size:"));
+      panelJedi.add(this.weaponSize);
+      panelJedi.add(new JLabel("Weapon is Open? (True or False):"));
+      panelJedi.add(this.weaponBool);
 
       return panelJedi;
    }
@@ -86,22 +86,22 @@ public class ScreenJedi extends JFrame {
          case JOptionPane.NO_OPTION:
             break;
          case JOptionPane.OK_OPTION:
-            this.setData(this.name.getText() + "," + this.age.getText() + "," + this.hight.getText());
-            control.saveJedi(data);
+            this.setData(this.weaponColor.getText() + "," + this.weaponSize.getText() + "," + this.weaponBool.getText());
+            control.saveWeapon(data);
             clearFields();
             try {
-               control.escreverArquivoJedi();
-               JOptionPane.showMessageDialog(this, "Your Jedi has been saved!");
+               control.escreverArquivoWeapon();
+               JOptionPane.showMessageDialog(this, "Your Weapon has been saved!");
             } catch (Exception ae) {
-               System.out.println("We couldn't save your Jedi!");
+               System.out.println("We couldn't save your Weapon!");
             }
             break;
       }
    }
 
    public void clearFields() {
-      this.name.setText("");
-      this.age.setText("");
-      this.hight.setText("");
+      this.weaponColor.setText("");
+      this.weaponSize.setText("");
+      this.weaponBool.setText("");
    }
 }
